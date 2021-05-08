@@ -12,16 +12,25 @@ body {
     border-radius: 12px;
     margin: auto;
     padding: 0;
+    position: relative;
 }
 
 .banner {
     height: 28px;
     border-radius: 11px 11px 0 0;
     background: #FFDC40;
+    position: absolute;
+    border-left: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4;
+    border-top: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    left: -1px;
+    top: -1px;
+    right: -1px;
 }
 
 .work-list {
-    padding: 15px 30px;
+    padding: 40px 30px;
 }
 
 h1 {
@@ -68,7 +77,6 @@ h1 {
 
 .button {
     margin: 18px auto 0 auto;
-    width: 150px;
-    height: 42px;
+    text-align: center;
     cursor: pointer;
 }
