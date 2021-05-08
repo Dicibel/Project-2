@@ -14,13 +14,13 @@ body {
     padding: 0;
 }
 
-.band {
+.banner {
     height: 28px;
     border-radius: 11px 11px 0 0;
     background: #FFDC40;
 }
 
-.work-space {
+.work-list {
     padding: 15px 30px;
 }
 
