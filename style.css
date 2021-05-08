@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
-
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -10,14 +9,14 @@ body {
 .wrapper {
     max-width: 336px;
     border: 1px solid #C4C4C4;
-    border-radius: 12px;   
+    border-radius: 12px;
     margin: auto;
     padding: 0;
 }
 
 .band {
     height: 28px;
-    border-radius: 11px 11px 0 0; 
+    border-radius: 11px 11px 0 0;
     background: #FFDC40;
 }
 
@@ -25,7 +24,7 @@ body {
     padding: 15px 30px;
 }
 
-.title {
+h1 {
     margin: 0;
     padding: 0;
     text-align: center;
@@ -41,12 +40,12 @@ body {
     cursor: pointer;
 }
 
-.input-field {
+.input {
     margin: 0;
     padding: 2px 10px;
     box-sizing: border-box;
     border: 1px solid #C4C4C4;
-    border-radius: 6px; 
+    border-radius: 6px;
 }
 
 .task {
