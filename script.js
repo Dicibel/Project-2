@@ -4,18 +4,17 @@ class toDoList {
             this.countTask = 2;
             this.flag = 0;
         }
-        /** 
-         * Инициализации методов класса
-         */
+        // Инициализации методов класса
+
     init() {
         this.setEventListenerForButton();
         this.setEventListenerForSort();
         this.setEventListenerForRemove(document.querySelector('.task__img'));
+        // console.log(this.list);
     }
 
-    /**
-     * Обработчик события при нажатии на кнопку "Добавить"
-     */
+    //Обработчик события при нажатии на кнопку Добавить
+
     setEventListenerForButton() {
         let button = document.querySelector('.button');
         button.addEventListener('click', (event) => {
@@ -29,9 +28,7 @@ class toDoList {
         });
     }
 
-    /**
-     * Обработчик события при наведении или нажатии на кнопку "Сортировки"
-     */
+    //Обработчик события при наведении или нажатии на сортировку
     setEventListenerForSort() {
         let sort = document.querySelector('.sort__img');
         //Событие при наведении мыши на сортировку
@@ -50,9 +47,7 @@ class toDoList {
         });
     }
 
-    /**
-     * Обработчик событий при наведении или нажатии на крестик
-     */
+    // Обработчик событий при наведении или нажатии на крестик
     setEventListenerForRemove(item) {
         //Событие при наведении мыши на крестик
         item.addEventListener('mouseover', () => {
@@ -68,9 +63,7 @@ class toDoList {
         });
     }
 
-    /**
-     * Добавление задачи в список.
-     */
+    //Добавление задачи в список.
     addTask(valueTask) {
         let div = document.createElement('div');
         div.classList.add('task');
@@ -94,8 +87,10 @@ class toDoList {
         this.updateList();
     }
 
+    // Удаление элемента из списка задач
+
     removeTask(element) {
-        //Удалить элемент из массива списка задач
+        //Удаляем элемент из массива списка задач
         if (this.list.length !== 1) {
             this.list = this.list.filter((item) => {
                 return item.firstElementChild.name !== element;
@@ -104,15 +99,13 @@ class toDoList {
             this.list[0].firstElementChild.value = '';
         }
 
-        //Обновить список задач на странице
+        //Обновляем список задач на странице
         this.updateList();
     }
 
-    /**
-     * Сортировка
-     */
+    //Сортировка
     sort() {
-        //Сортировка от меньшего к большему
+        //Сортируем массив от меньшего к большему
         this.list = this.list.sort((task1, task2) => {
             let value1 = task1.firstElementChild.value;
             let value2 = task2.firstElementChild.value;
@@ -124,7 +117,7 @@ class toDoList {
             }
         });
 
-        //Реверс массива
+        //Разворчаиваем массив, если нужно от большего к меньшему
         if (this.flag === 1) {
             this.list.reverse();
         }
@@ -133,24 +126,22 @@ class toDoList {
         this.updateList();
     }
 
-    /**
-     * Обновление списка задач на странице 
-     * */
+    //Обновление списка задач на странице 
     updateList() {
-        //Удалить текущий список задач со страницы
+        //Удаляем текущий список задач со страницы
         let oldInputField = document.querySelector('.input-field');
         oldInputField.remove();
 
-        //Добавить введенные задачи
+        //Создаем новую область ввода, если все задачи удалены
+        let newInputField = document.createElement('div');
+        newInputField.classList.add('input-field');
+
+        //Добавляем введенные задачи
         this.list.forEach((element) => {
             newInputField.append(element);
         });
 
-        //Создать новую область ввода, если все задачи удалены
-        let newInputField = document.createElement('div');
-        newInputField.classList.add('input-field');
-
-        //Разместить область ввода на странице
+        //Размещаем область ввода на странице
         let button = document.querySelector('.sort');
         button.after(newInputField);
 
